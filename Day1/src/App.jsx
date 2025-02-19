@@ -20,7 +20,7 @@ const data = [
   name: "Smol Billi",
   desig: "Mahan",
   role: "meow",
-  img: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSEhMVFRUXFRUVFRcVFxUVFxUVFRUWFxUVFRUYHSggGB0lHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0lHyUu'
+  img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfHJL4y6E0Ps6voeKXWnbQzNUEknoXGQCwuA&s'
 }
 ];
 
@@ -45,7 +45,7 @@ const invoiceData = [
     CompanyLogo: "crown",
     amount: "$69,000.00",
     status: "Pending"
-  }
+  },
 ];
 const App = () => {
   return (
@@ -58,7 +58,7 @@ const App = () => {
     
     <div className='container w-[80%] mx-auto grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 mt-10'>
     {invoiceData.map((invoice, index) => (
-          <InvoiceStatus key={index} date={invoice.date} companyName={invoice.companyName} CompanyLogo={invoice.CompanyLogo} amount={invoice.amount} status={invoice.status} />
+          <InvoiceStatus key={index} {...invoice} />
         ))}
     </div>
     </>
