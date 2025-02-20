@@ -1,3 +1,6 @@
+import { useState } from "react"
+
+
 const links = [
     {
         item: 'Home',
@@ -20,6 +23,7 @@ const links = [
 
 
 const Navbar = () => {
+    const [nav, setNav] = useState(false);
   return (
     <>
     <div className="flex items-center justify-between px-40 max-md:px-20 max-sm:px-10 bg-gray-100 py-4">
@@ -33,9 +37,19 @@ const Navbar = () => {
             links.map((link,index)=>{
                 return(<li key={index} className='uppercasetext-lg font-bold max-md:hidden'>{link.item}</li>)
             })}
-            <li className="block md:hidden border border-bla p-2 bg-slate-300"><span class="material-symbols-outlined">menu</span></li>
+            <li className="block md:hidden border border-bla p-2 bg-slate-300"><button class="material-symbols-outlined" onClick={()=>{
+                nav?setNav(false):setNav(true)
+            }}>{nav?"close":"menu"}</button></li>
         </ul>
     </div>
+    </div>
+    <div>
+    <ul className={` w-[60%] z-10 absolute bg-white py-10 right-0 gap-10 flex flex-col justify-center items-center ${nav?"block": "hidden"}`}>
+            {
+            links.map((link,index)=>{
+                return(<li key={index} className='uppercasetext-lg font-bold'>{link.item}</li>)
+            })}
+        </ul>
     </div>
   </>
   )
