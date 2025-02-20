@@ -2,6 +2,9 @@ import React from 'react'
 import './App.css'
 import ContractCard from './component/globals/ContractCard'
 import InvoiceStatus from './component/globals/InvoiceStatus'
+import Navbar from './component/globals/Navbar';
+
+
 
 const data = [
   {
@@ -50,6 +53,8 @@ const invoiceData = [
 const App = () => {
   return (
     <>
+    <Navbar />
+
     <div className='container w-[80%] mx-auto grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 mt-10'>
       {data.map((person,index)=>(
         <ContractCard key={index} name={person.name} desig={person.desig} role={person.role} img={person.img}  />
@@ -61,6 +66,7 @@ const App = () => {
           <InvoiceStatus key={index} {...invoice} />
         ))}
     </div>
+
     </>
     
   );
