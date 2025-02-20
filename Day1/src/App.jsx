@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import ContractCard from './component/globals/ContractCard'
 import InvoiceStatus from './component/globals/InvoiceStatus'
 import Navbar from './component/globals/Navbar';
-
 
 
 const data = [
@@ -51,6 +50,9 @@ const invoiceData = [
   },
 ];
 const App = () => {
+
+  const [count, setCount] = useState(0)
+
   return (
     <>
     <Navbar />
@@ -66,7 +68,13 @@ const App = () => {
           <InvoiceStatus key={index} {...invoice} />
         ))}
     </div>
-
+    <div className='flex flex-col items-center justify-center pt-30'>
+        <div>
+        <button className='text-white font-bold bg-yellow-300 px-5 py-3 cursor-pointer hover:bg-amber-500' onClick={() => setCount(count+1)} >Add</button>
+        <button className='text-white font-bold bg-red-300 px-5 py-3 cursor-pointer hover:bg-red-500' onClick={() => setCount(count -1)} >Substract</button>
+        </div>
+        <p className='test'>{count}</p>
+        </div>
     </>
     
   );

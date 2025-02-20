@@ -33,7 +33,7 @@ const Navbar = () => {
             links.map((link,index)=>{
                 return(<li key={index} className='uppercasetext-lg font-bold max-md:hidden'>{link.item}</li>)
             })}
-            <li className="block md:hidden border border-black flex p-2 bg-slate-300"><span class="material-symbols-outlined">menu</span></li>
+            <li className="block md:hidden border border-bla p-2 bg-slate-300"><span class="material-symbols-outlined">menu</span></li>
         </ul>
     </div>
     </div>
