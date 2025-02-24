@@ -44,7 +44,7 @@ const Navbar = () => {
     </div>
     </div>
     <div>
-    <ul className={` w-[60%] z-10 absolute bg-white py-10 right-0 gap-10 flex flex-col justify-center items-center ${nav?"block": "hidden"}`}>
+    <ul className={` w-[60%] z-10 absolute bg-white py-10 right-0 gap-10 flex flex-col justify-center items-center drop-shadow-xl  ${nav?"block": "hidden"}`}>
             {
             links.map((link,index)=>{
                 return(<li key={index} className='uppercasetext-lg font-bold'>{link.item}</li>)

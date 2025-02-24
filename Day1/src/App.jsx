@@ -4,8 +4,10 @@ import ContractCard from "./component/globals/ContractCard";
 import InvoiceStatus from "./component/globals/InvoiceStatus";
 import Navbar from "./component/globals/Navbar";
 import Show from "./component/globals/Show";
+import Card from "./component/globals/Card";
+import { data } from "./assets/data";
 
-const data = [
+const data1 = [
   {
     name: "Esther Howard",
     desig: "Forward Response Developer",
@@ -52,13 +54,22 @@ const invoiceData = [
 const App = () => {
   const [count, setCount] = useState(0);
 
+  const [index, setIndex] = React.useState(0);
+
+  const prevHandle=()=>{
+    setIndex(index===0?data.length-1:index-1);
+  }
+  const nextHandle=()=>{
+    setIndex(index===data.length-1?0:index+1);
+  }
+
   return (
     <>
       <Navbar />
 
 
       <div className="container w-[80%] mx-auto grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 mt-10">
-        {data.map((person, index) => (
+        {data1.map((person, index) => (
           <ContractCard
             key={index}
             name={person.name}
@@ -91,8 +102,17 @@ const App = () => {
         </div>
         <p className="test">{count}</p>
       </div>
-
       <Show />
+      <div className='py-16'>
+      <h1 className='text-center text-3xl font-serif '>Carousel Cards</h1>
+      <div className='flex justify-center items-center gap-4 mt-4'>
+        <button onClick={prevHandle} className='bg-slate-800 text-white px-4 py-2 h-12 w-24 rounded-lg'>Prev</button>
+        <Card name={data[index].name} linkedin={data[index].linkedin} img={data[index].image} bio={data[index].bio} designation={data[index].designation}/>
+        <button onClick={nextHandle} className='bg-green-500 text-white px-4 py-2 h-12 w-24 rounded-lg'>Next</button>
+
+      </div>
+    </div>
+
     </>
   );
 };
