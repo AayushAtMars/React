@@ -6,6 +6,8 @@ import Navbar from "./component/globals/Navbar";
 import Show from "./component/globals/Show";
 import Card from "./component/globals/Card";
 import { data } from "./assets/data";
+import Form from "./component/globals/Form";
+import CardForm from "./component/globals/CardForm";
 
 const data1 = [
   {
@@ -63,6 +65,9 @@ const App = () => {
     setIndex(index===data.length-1?0:index+1);
   }
 
+
+
+
   return (
     <>
       <Navbar />
@@ -112,6 +117,10 @@ const App = () => {
 
       </div>
     </div>
+    
+    <Form />
+
+    <CardForm />
 
     </>
   );
