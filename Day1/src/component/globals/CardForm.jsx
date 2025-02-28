@@ -63,7 +63,7 @@ const CardForm = () => {
             </div>
 
             <div className="w-full relative">
-              <label htmlFor="desc" className="text-sm">
+              <label htmlFor="desc1" className="text-sm">
                 Description
               </label>
               <input
@@ -72,7 +72,7 @@ const CardForm = () => {
                   setForm({ ...form, desc: e.target.value });
                   console.log(e.target.value);
                 }}
-                name="desc"
+                name="desc1"
                 value={form.desc}
                 className="p-2 border-0 bg-slate-200 w-full rounded-lg"
                 placeholder="Enter Description"
@@ -81,11 +81,11 @@ const CardForm = () => {
             </div>
 
             <div className="w-full relative">
-              <label htmlFor="desc" className="text-sm">
+              <label htmlFor="desc2" className="text-sm">
                 Job Profile
               </label>
               <input
-                id="desc"
+                id="desc2"
                 onChange={(e) => {
                   setForm({ ...form, profile: e.target.value });
                   console.log(e.target.value);

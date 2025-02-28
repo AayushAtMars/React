@@ -9,6 +9,7 @@ import { data } from "./assets/data";
 import Form from "./component/globals/Form";
 import CardForm from "./component/globals/CardForm";
 import UseEffect from "./component/globals/UseEffect";
+import DummyUseEffect from "./component/globals/DummyUseEffect";
 
 const data1 = [
   {
@@ -124,6 +125,8 @@ const App = () => {
     <CardForm />
 
     <UseEffect />
+
+    <DummyUseEffect />
     </>
   );
 };
